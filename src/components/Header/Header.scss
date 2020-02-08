@@ -1,0 +1,28 @@
+.header{
+  padding: 20px 50px;
+  background-color: #222222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo{
+    
+    a{
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+      &:hover{
+        color: #00bc8c;
+      }
+    }
+  }
+  &__search{
+
+    input{
+      padding: 10px;
+      border-radius: 10px;
+      outline: none;
+      border: 0;
+    }
+  }
+}

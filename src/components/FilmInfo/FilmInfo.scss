@@ -1,0 +1,23 @@
+.film-info{
+  padding: 30px;
+  margin: 10px 10%;
+  background-color: #303030;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 10px;
+  &__title{
+    text-align: center;
+  }
+  &__information{
+    display: flex;
+    flex-direction: column;
+  }
+  &__description{
+    padding: 10px 0;
+    text-align: justify;
+    &span{
+      
+    }
+  }
+
+}

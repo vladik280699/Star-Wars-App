@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import HeaderContainer from './components/Header/HeaderContainer';
+import FilmsListContainer from './components/FilmsList/FilmsListContainer';
+import {Route, BrowserRouter } from 'react-router-dom';
+import FilmInfoContainer from './components/FilmInfo/FilmInfoContainer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <HeaderContainer />
+      <Route exact path="/" render={() => <FilmsListContainer />} />
+      <Route path="/film/" render={() => <FilmInfoContainer />} />
+    </BrowserRouter>
   );
 }
+
 
 export default App;
