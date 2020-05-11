@@ -1,4 +1,4 @@
-import { peopleAPI, planetsAPI, starshipsAPI } from "../api/api";
+import { peopleAPI, planetsAPI, starshipsAPI, filmsAPI } from "../api/api";
 
 const SET_FILM = "SET_FILM";
 const SET_PLANETS = "SET_PLANETS";
@@ -76,31 +76,17 @@ export const setStarships = starships => {
 };
 
 export const getPlanets = planets => async dispatch => {
-  const value = await Promise.all(
-    planets.map(p => {
-      return planetsAPI.getPlanet(p);
-    })
-  );
-
+  const value = await Promise.all(planets.map(p => planetsAPI.getPlanet(p)));
   dispatch(setPlanets(value));
 };
 
 export const getPeople = people => async dispatch => {
-  const value = await Promise.all(
-    people.map(p => {
-      return peopleAPI.getPerson(p);
-    })
-  );
-
+  const value = await Promise.all(people.map(p => peopleAPI.getPerson(p)));
   dispatch(setPeople(value));
 };
-export const getStarships = starships => async dispatch => {
-  const value = await Promise.all(
-    starships.map(p => {
-      return starshipsAPI.getStarship(p);
-    })
-  );
 
+export const getStarships = starships => async dispatch => {
+  const value = await Promise.all(starships.map(p => starshipsAPI.getStarship(p)));
   dispatch(setStarships(value));
 };
 

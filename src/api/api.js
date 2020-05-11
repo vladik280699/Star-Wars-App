@@ -1,38 +1,24 @@
 import * as axios from "axios";
 
-const baseAPI = 'https://swapi.co/api/';
+const baseAPI = 'https://swapi.dev/api/';
 
-const getItem = (url) => {
-  return axios.get(url)
-    .then(res => { return res.data})
-}
+const getItem = (url) => axios.get(url)
+    .then(res => res.data);
 
 export const filmsAPI = {
-  getFilms(){
-    return axios.get(`${baseAPI}films/`)
-    .then(res => { return res.data.results})
-        
-  },
-  getFilm(url){
-    return getItem(url);
-  }
+  getFilms: () => axios.get(`${baseAPI}films/`)
+    .then(res => res.data.results),
+    
+  getFilm:(url) => getItem(url),
 }
 
 export const peopleAPI = {
-  getPerson(url){
-    return getItem(url);
-  }
+  getPerson:(url) => getItem(url),
 }
 
 export const planetsAPI = {
-  getPlanet(url){
-    return getItem(url);
-        
-  }
+  getPlanet:(url) => getItem(url),
 }
 export const starshipsAPI = {
-  getStarship(url){
-    return getItem(url);
-        
-  }
+  getStarship:(url) => getItem(url),
 }
